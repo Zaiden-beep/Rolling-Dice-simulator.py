@@ -1,23 +1,32 @@
+#to randomize the numbers we get when rolling the dice we have to import the random module 
+# to randomize the numbers.
 import random
-import time
-minimum = 1
-maximum = 6
+import time #to allow time.sleep function we have to import the time module
+#the following are two variables that we need to set
+
+minimum = 1 #the dice will roll to the minimum of 1
+maximum = 6 #to a maximum of 6
 
 # ------ Global variables---------
-print("Good day, lets get in on!".upper()) #this prints a greeting using the upper case function
+print("Hello! Welcome to python's rollig dice simulator,")
+print("This simulator game randomly rolls a dice between a minimum of 1 to a maximum of 6.")
+print("lets get in on!".upper()) #this prints a greeting using the upper case function
+name = input("Enter player name: ")
+print("Hello! " +name.upper()+ "! lets roll some dice. ")
 roll_again = True
 
+#use a while loop so that the player can roll the dice again
 while roll_again:
-  print("Rolling dice 3..2..1 ")
-  time.sleep (random.randint (1,4))#wait between 1 to 4 seconds randomly
+  print("Rolling dice 3..2..1 ")#this counter works in conjuction with the time sleep function of 1-4 
+  time.sleep (random.randint (1,4))#wait between 1 to 4 seconds before rolling the dice
   result = random.randint (minimum, maximum)#this is a random function which simulates a random number from minimum of 1 to a max of 6
   print("You rolled: ")#some plain text to inform users
-  print(result)
-  roll_again = False
-  repeater = input("Do you want to roll again :(yes or no) ? : ").lower()
-  while repeater not in ["yes", "no"]:repeater = input("Invalid Input. Please try again : ").lower()
-  if repeater == "yes":
+  print(result)# this prints the reults for the player to see..
+  roll_again = False 
+  repeater = input("To restart the game type R!\nDo you want to roll again :(yes or no) ? :").lower()#roll again repeater input
+  while repeater not in ["yes", "no"]:repeater = input("Invalid Input. Please try again : ").lower()#while loop will keep asking the player after every roll
+  if repeater == "yes": #if statement 
     roll_again = True
   elif repeater == "no":
     roll_again = False
-  print("Have a good day.")
+  print("Have a good day.") #End of the game!
