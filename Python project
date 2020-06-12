@@ -1,0 +1,23 @@
+import random
+import time
+minimum = 1
+maximum = 6
+
+# ------ Global variables---------
+print("Good day, lets get in on!".upper()) #this prints a greeting using the upper case function
+roll_again = True
+
+while roll_again:
+  print("Rolling dice 3..2..1 ")
+  time.sleep (random.randint (1,4))#wait between 1 to 4 seconds randomly
+  result = random.randint (minimum, maximum)#this is a random function which simulates a random number from minimum of 1 to a max of 6
+  print("You rolled: ")#some plain text to inform users
+  print(result)
+  roll_again = False
+  repeater = input("Do you want to roll again :(yes or no) ? : ").lower()
+  while repeater not in ["yes", "no"]:repeater = input("Invalid Input. Please try again : ").lower()
+  if repeater == "yes":
+    roll_again = True
+  elif repeater == "no":
+    roll_again = False
+  print("Have a good day.")
